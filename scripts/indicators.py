@@ -1,3 +1,9 @@
+"""
+Adds technical indicators (moving averages, Bollinger Bands) to raw OHLCV data.
+- Processes multiple timeframes (1d, 4h).
+- Handles missing files and validates output.
+- Includes verification utility for processed data.
+"""
 
 import pandas as pd
 import ta

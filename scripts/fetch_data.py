@@ -1,3 +1,10 @@
+"""
+Fetches raw OHLCV data from Binance and saves it as CSV files for further processing in the pipeline.
+- Handles both small and large data requests.
+- Ensures data directory exists.
+- Validates and cleans data before saving.
+"""
+
 import os
 import pandas as pd
 from datetime import datetime, timedelta
@@ -147,13 +154,13 @@ def fetch_all_data():
     print("Starting data fetch process...")
     print("=" * 50)
     
-    # Fetch 1D data (500 days ≈ 1.4 years)
-    fetch_binance_data("BTCUSDT", "1d", 500, "data/raw_1d.csv")
+    # Fetch 1D data (1000 days ≈ 2.7 years)
+    fetch_binance_data("BTCUSDT", "1d", 1000, "data/raw_1d.csv")
     
     print("-" * 50)
     
-    # Fetch 4H data (3000 × 4h = 500 days) - will use multiple API calls
-    fetch_binance_data("BTCUSDT", "4h", 3000, "data/raw_4h.csv")
+    # Fetch 4H data (6000 × 4h = 1000 days)
+    fetch_binance_data("BTCUSDT", "4h", 6000, "data/raw_4h.csv")
     
     print("=" * 50)
     print("Data fetch completed!")
