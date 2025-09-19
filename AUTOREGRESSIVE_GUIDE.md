@@ -109,9 +109,9 @@ python -m scripts.train
 
 You can modify prediction horizons, confidence calculations, and visualization settings in the respective script files:
 
-- `scripts/predict.py` - Core autoregressive logic
-- `scripts/multi_step_forecast.py` - Forecasting and visualization
-- `scripts/evaluate_multi_step.py` - Accuracy evaluation
+- `scripts/multi_step_forecast_1d.py` - Core autoregressive logic and forecasting
+- `scripts/historical_backtest.py` - Historical backtesting functionality  
+- `scripts/visualize.py` - Visualization and plotting utilities
 
 ## Example Output
 
