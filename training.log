@@ -1,0 +1,240 @@
+2025-08-05 00:52:07,034 - INFO - ============================================================
+2025-08-05 00:52:07,034 - INFO - Starting Enhanced Dual LSTM Training Pipeline
+2025-08-05 00:52:07,034 - INFO - ============================================================
+2025-08-05 00:52:07,035 - INFO - Loading dataset...
+2025-08-05 00:52:07,052 - INFO - Dataset shape: (6882, 13)
+2025-08-05 00:52:07,053 - INFO - Timeframes available: ['4h' '1d']
+2025-08-05 00:52:07,053 - INFO - Date range: 2022-11-18 16:00:00 to 2025-08-04 16:00:00
+2025-08-05 00:52:07,054 - INFO - Scaling 12 numeric features...
+2025-08-05 00:52:07,058 - INFO - Creating timeframe sequences...
+2025-08-05 00:52:07,077 - INFO - Created sequences - 1d: 931, 4h: 5931
+2025-08-05 00:52:07,077 - INFO - Aligning timeframes based on timestamps...
+2025-08-05 00:52:07,145 - INFO - Aligned 5584 timestamp pairs
+2025-08-05 00:52:07,149 - INFO - Creating enhanced targets...
+2025-08-05 00:52:07,259 - INFO - Final dataset: 5584 samples
+2025-08-05 00:52:07,260 - INFO - Signal distribution: {0: np.int64(3303), 1: np.int64(2281)}
+2025-08-05 00:52:07,260 - INFO - Signal ratio (positive/negative): 0.691
+2025-08-05 00:52:07,263 - INFO - Tensor shapes:
+2025-08-05 00:52:07,263 - INFO -   X_1d: torch.Size([5584, 10, 12])
+2025-08-05 00:52:07,263 - INFO -   X_4h: torch.Size([5584, 10, 12])
+2025-08-05 00:52:07,263 - INFO -   y_signal: torch.Size([5584, 1])
+2025-08-05 00:52:07,263 - INFO -   y_price: torch.Size([5584, 2])
+2025-08-05 00:52:07,269 - INFO - Data split: Train=3908, Val=838, Test=838
+2025-08-05 00:52:07,269 - INFO - Batch size: 32
+2025-08-05 00:52:08,085 - ERROR - Training failed with error: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+2025-08-05 00:52:08,085 - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "C:\Users\007\Desktop\zavrsni\bitcoin_lstm_prediction\scripts\train.py", line 356, in train_model
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer, mode='min', factor=0.5, patience=8, verbose=True
+    )
+TypeError: ReduceLROnPlateau.__init__() got an unexpected keyword argument 'verbose'
+2025-08-05 00:54:48,877 - INFO - ============================================================
+2025-08-05 00:54:48,877 - INFO - Starting Enhanced Dual LSTM Training Pipeline
+2025-08-05 00:54:48,877 - INFO - ============================================================
+2025-08-05 00:54:48,877 - INFO - Loading dataset...
+2025-08-05 00:54:48,896 - INFO - Dataset shape: (6882, 13)
+2025-08-05 00:54:48,897 - INFO - Timeframes available: ['4h' '1d']
+2025-08-05 00:54:48,897 - INFO - Date range: 2022-11-18 16:00:00 to 2025-08-04 16:00:00
+2025-08-05 00:54:48,897 - INFO - Scaling 12 numeric features...
+2025-08-05 00:54:48,901 - INFO - Creating timeframe sequences...
+2025-08-05 00:54:48,920 - INFO - Created sequences - 1d: 931, 4h: 5931
+2025-08-05 00:54:48,920 - INFO - Aligning timeframes based on timestamps...
+2025-08-05 00:54:48,989 - INFO - Aligned 5584 timestamp pairs
+2025-08-05 00:54:48,991 - INFO - Creating enhanced targets...
+2025-08-05 00:54:49,104 - INFO - Final dataset: 5584 samples
+2025-08-05 00:54:49,104 - INFO - Signal distribution: {0: np.int64(3303), 1: np.int64(2281)}
+2025-08-05 00:54:49,105 - INFO - Signal ratio (positive/negative): 0.691
+2025-08-05 00:54:49,107 - INFO - Tensor shapes:
+2025-08-05 00:54:49,107 - INFO -   X_1d: torch.Size([5584, 10, 12])
+2025-08-05 00:54:49,107 - INFO -   X_4h: torch.Size([5584, 10, 12])
+2025-08-05 00:54:49,107 - INFO -   y_signal: torch.Size([5584, 1])
+2025-08-05 00:54:49,107 - INFO -   y_price: torch.Size([5584, 2])
+2025-08-05 00:54:49,111 - INFO - Data split: Train=3908, Val=838, Test=838
+2025-08-05 00:54:49,112 - INFO - Batch size: 32
+2025-08-05 00:54:49,989 - INFO - Starting training loop...
+2025-08-05 00:54:49,989 - INFO - Max epochs: 300
+2025-08-05 00:54:52,196 - INFO - Epoch 1/300
+2025-08-05 00:54:52,196 - INFO -   Train - Total: 0.8772, Signal: 0.8446, Price: 0.3260
+2025-08-05 00:54:52,196 - INFO -   Val - Total: 0.8115, Signal: 0.8035, Price: 0.0802
+2025-08-05 00:54:52,196 - INFO -   Metrics - Acc: 0.5632, Prec: 0.4758, Rec: 0.6589, F1: 0.5526
+2025-08-05 00:54:52,196 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:54:54,350 - INFO - Epoch 2/300
+2025-08-05 00:54:54,350 - INFO -   Train - Total: 0.8283, Signal: 0.8169, Price: 0.1142
+2025-08-05 00:54:54,350 - INFO -   Val - Total: 0.8014, Signal: 0.7974, Price: 0.0404
+2025-08-05 00:54:54,350 - INFO -   Metrics - Acc: 0.5621, Prec: 0.4749, Rec: 0.6618, F1: 0.5530
+2025-08-05 00:54:54,350 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:54:56,473 - INFO - Epoch 3/300
+2025-08-05 00:54:56,473 - INFO -   Train - Total: 0.8191, Signal: 0.8104, Price: 0.0875
+2025-08-05 00:54:56,473 - INFO -   Val - Total: 0.7991, Signal: 0.7974, Price: 0.0170
+2025-08-05 00:54:56,473 - INFO -   Metrics - Acc: 0.5621, Prec: 0.4749, Rec: 0.6618, F1: 0.5530
+2025-08-05 00:54:56,473 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:54:58,596 - INFO - Epoch 4/300
+2025-08-05 00:54:58,597 - INFO -   Train - Total: 0.8148, Signal: 0.8082, Price: 0.0659
+2025-08-05 00:54:58,597 - INFO -   Val - Total: 0.7987, Signal: 0.7974, Price: 0.0131
+2025-08-05 00:54:58,597 - INFO -   Metrics - Acc: 0.5609, Prec: 0.4756, Rec: 0.7114, F1: 0.5701
+2025-08-05 00:54:58,597 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:55:00,767 - INFO - Epoch 5/300
+2025-08-05 00:55:00,767 - INFO -   Train - Total: 0.8142, Signal: 0.8083, Price: 0.0590
+2025-08-05 00:55:00,767 - INFO -   Val - Total: 0.8203, Signal: 0.8107, Price: 0.0956
+2025-08-05 00:55:00,767 - INFO -   Metrics - Acc: 0.4905, Prec: 0.4410, Rec: 0.9155, F1: 0.5953
+2025-08-05 00:55:00,767 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:55:11,408 - INFO - Epoch 10/300
+2025-08-05 00:55:11,408 - INFO -   Train - Total: 0.8093, Signal: 0.8052, Price: 0.0404
+2025-08-05 00:55:11,408 - INFO -   Val - Total: 0.7983, Signal: 0.7962, Price: 0.0216
+2025-08-05 00:55:11,408 - INFO -   Metrics - Acc: 0.5621, Prec: 0.4760, Rec: 0.6939, F1: 0.5647
+2025-08-05 00:55:11,408 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:55:32,810 - INFO - Epoch 20/300
+2025-08-05 00:55:32,810 - INFO -   Train - Total: 0.8068, Signal: 0.8038, Price: 0.0301
+2025-08-05 00:55:32,810 - INFO -   Val - Total: 0.7975, Signal: 0.7958, Price: 0.0173
+2025-08-05 00:55:32,810 - INFO -   Metrics - Acc: 0.5644, Prec: 0.4797, Rec: 0.7580, F1: 0.5876
+2025-08-05 00:55:32,810 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:55:57,507 - INFO - Epoch 30/300
+2025-08-05 00:55:57,507 - INFO -   Train - Total: 0.8044, Signal: 0.8019, Price: 0.0248
+2025-08-05 00:55:57,507 - INFO -   Val - Total: 0.7928, Signal: 0.7917, Price: 0.0108
+2025-08-05 00:55:57,507 - INFO -   Metrics - Acc: 0.5644, Prec: 0.4783, Rec: 0.7055, F1: 0.5701
+2025-08-05 00:55:57,507 - INFO -   Learning Rate: 0.000500
+2025-08-05 00:56:18,725 - INFO - Epoch 40/300
+2025-08-05 00:56:18,725 - INFO -   Train - Total: 0.8048, Signal: 0.8025, Price: 0.0234
+2025-08-05 00:56:18,725 - INFO -   Val - Total: 0.7954, Signal: 0.7946, Price: 0.0073
+2025-08-05 00:56:18,725 - INFO -   Metrics - Acc: 0.5585, Prec: 0.4759, Rec: 0.7784, F1: 0.5907
+2025-08-05 00:56:18,725 - INFO -   Learning Rate: 0.000250
+2025-08-05 00:56:39,940 - INFO - Epoch 50/300
+2025-08-05 00:56:39,940 - INFO -   Train - Total: 0.8018, Signal: 0.7996, Price: 0.0216
+2025-08-05 00:56:39,940 - INFO -   Val - Total: 0.7936, Signal: 0.7927, Price: 0.0084
+2025-08-05 00:56:39,940 - INFO -   Metrics - Acc: 0.5501, Prec: 0.4704, Rec: 0.7872, F1: 0.5889
+2025-08-05 00:56:39,940 - INFO -   Learning Rate: 0.000125
+2025-08-05 00:56:39,940 - INFO - Early stopping triggered at epoch 50
+2025-08-05 00:56:39,941 - INFO - ==================================================
+2025-08-05 00:56:39,941 - INFO - Final Evaluation on Test Set
+2025-08-05 00:56:39,941 - INFO - ==================================================
+2025-08-05 00:56:40,045 - INFO - Test Results:
+2025-08-05 00:56:40,046 - INFO -   Loss - Total: 0.7914, Signal: 0.7904, Price: 0.0097
+2025-08-05 00:56:40,046 - INFO -   Signal Classification:
+2025-08-05 00:56:40,046 - INFO -     Accuracy: 0.5692
+2025-08-05 00:56:40,046 - INFO -     Precision: 0.4807
+2025-08-05 00:56:40,046 - INFO -     Recall: 0.6930
+2025-08-05 00:56:40,046 - INFO -     F1-Score: 0.5677
+2025-08-05 00:56:40,046 - INFO -     ROC-AUC: 0.6140
+2025-08-05 00:56:40,046 - INFO -     Specificity: 0.4839
+2025-08-05 00:56:40,046 - INFO -   Price Prediction:
+2025-08-05 00:56:40,046 - INFO -     RMSE: 0.099681
+2025-08-05 00:56:40,046 - INFO -     MAE: 0.079419
+2025-08-05 00:56:40,046 - INFO -   Confusion Matrix:
+2025-08-05 00:56:40,047 - INFO -     TN: 240, FP: 256
+2025-08-05 00:56:40,047 - INFO -     FN: 105, TP: 237
+2025-08-05 00:56:40,047 - INFO - Saving models and artifacts...
+2025-08-05 00:56:40,051 - INFO - ============================================================
+2025-08-05 00:56:40,051 - INFO - Training completed successfully!
+2025-08-05 00:56:40,051 - INFO - Best validation loss: 0.7928
+2025-08-05 00:56:40,051 - INFO - Final test accuracy: 0.5692
+2025-08-05 00:56:40,051 - INFO - Final test F1-score: 0.5677
+2025-08-05 00:56:40,052 - INFO - Models saved in 'models/' directory
+2025-08-05 00:56:40,052 - INFO - ============================================================
+2025-08-05 00:58:21,901 - INFO - ============================================================
+2025-08-05 00:58:21,901 - INFO - Starting Enhanced Dual LSTM Training Pipeline
+2025-08-05 00:58:21,901 - INFO - ============================================================
+2025-08-05 00:58:21,901 - INFO - Loading dataset...
+2025-08-05 00:58:21,919 - INFO - Dataset shape: (6882, 13)
+2025-08-05 00:58:21,920 - INFO - Timeframes available: ['4h' '1d']
+2025-08-05 00:58:21,920 - INFO - Date range: 2022-11-18 16:00:00 to 2025-08-04 16:00:00
+2025-08-05 00:58:21,921 - INFO - Scaling 12 numeric features...
+2025-08-05 00:58:21,926 - INFO - Creating timeframe sequences...
+2025-08-05 00:58:21,944 - INFO - Created sequences - 1d: 931, 4h: 5931
+2025-08-05 00:58:21,945 - INFO - Aligning timeframes based on timestamps...
+2025-08-05 00:58:22,012 - INFO - Aligned 5584 timestamp pairs
+2025-08-05 00:58:22,015 - INFO - Creating enhanced targets...
+2025-08-05 00:58:22,128 - INFO - Final dataset: 5584 samples
+2025-08-05 00:58:22,128 - INFO - Signal distribution: {0: np.int64(3303), 1: np.int64(2281)}
+2025-08-05 00:58:22,128 - INFO - Signal ratio (positive/negative): 0.691
+2025-08-05 00:58:22,130 - INFO - Tensor shapes:
+2025-08-05 00:58:22,130 - INFO -   X_1d: torch.Size([5584, 10, 12])
+2025-08-05 00:58:22,131 - INFO -   X_4h: torch.Size([5584, 10, 12])
+2025-08-05 00:58:22,131 - INFO -   y_signal: torch.Size([5584, 1])
+2025-08-05 00:58:22,131 - INFO -   y_price: torch.Size([5584, 2])
+2025-08-05 00:58:22,135 - INFO - Data split: Train=3908, Val=838, Test=838
+2025-08-05 00:58:22,135 - INFO - Batch size: 32
+2025-08-05 00:58:22,955 - INFO - Starting training loop...
+2025-08-05 00:58:22,956 - INFO - Max epochs: 300
+2025-08-05 00:58:25,109 - INFO - Epoch 1/300
+2025-08-05 00:58:25,109 - INFO -   Train - Total: 0.8636, Signal: 0.8296, Price: 0.3393
+2025-08-05 00:58:25,109 - INFO -   Val - Total: 0.8153, Signal: 0.8039, Price: 0.1139
+2025-08-05 00:58:25,109 - INFO -   Metrics - Acc: 0.5477, Prec: 0.4688, Rec: 0.7872, F1: 0.5876
+2025-08-05 00:58:25,109 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:58:27,233 - INFO - Epoch 2/300
+2025-08-05 00:58:27,233 - INFO -   Train - Total: 0.8283, Signal: 0.8169, Price: 0.1134
+2025-08-05 00:58:27,234 - INFO -   Val - Total: 0.8070, Signal: 0.8036, Price: 0.0342
+2025-08-05 00:58:27,234 - INFO -   Metrics - Acc: 0.5585, Prec: 0.4726, Rec: 0.6793, F1: 0.5574
+2025-08-05 00:58:27,234 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:58:29,351 - INFO - Epoch 3/300
+2025-08-05 00:58:29,351 - INFO -   Train - Total: 0.8191, Signal: 0.8106, Price: 0.0849
+2025-08-05 00:58:29,351 - INFO -   Val - Total: 0.8031, Signal: 0.7978, Price: 0.0529
+2025-08-05 00:58:29,351 - INFO -   Metrics - Acc: 0.5501, Prec: 0.4701, Rec: 0.7784, F1: 0.5862
+2025-08-05 00:58:29,351 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:58:31,480 - INFO - Epoch 4/300
+2025-08-05 00:58:31,481 - INFO -   Train - Total: 0.8198, Signal: 0.8114, Price: 0.0849
+2025-08-05 00:58:31,481 - INFO -   Val - Total: 0.7962, Signal: 0.7937, Price: 0.0248
+2025-08-05 00:58:31,481 - INFO -   Metrics - Acc: 0.5561, Prec: 0.4737, Rec: 0.7609, F1: 0.5839
+2025-08-05 00:58:31,481 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:58:33,620 - INFO - Epoch 5/300
+2025-08-05 00:58:33,620 - INFO -   Train - Total: 0.8179, Signal: 0.8118, Price: 0.0612
+2025-08-05 00:58:33,621 - INFO -   Val - Total: 0.8047, Signal: 0.8024, Price: 0.0230
+2025-08-05 00:58:33,621 - INFO -   Metrics - Acc: 0.5609, Prec: 0.4744, Rec: 0.6764, F1: 0.5577
+2025-08-05 00:58:33,621 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:58:44,155 - INFO - Epoch 10/300
+2025-08-05 00:58:44,156 - INFO -   Train - Total: 0.8140, Signal: 0.8095, Price: 0.0457
+2025-08-05 00:58:44,156 - INFO -   Val - Total: 0.7994, Signal: 0.7973, Price: 0.0207
+2025-08-05 00:58:44,156 - INFO -   Metrics - Acc: 0.5430, Prec: 0.4660, Rec: 0.7988, F1: 0.5886
+2025-08-05 00:58:44,156 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:59:05,292 - INFO - Epoch 20/300
+2025-08-05 00:59:05,292 - INFO -   Train - Total: 0.8094, Signal: 0.8060, Price: 0.0338
+2025-08-05 00:59:05,292 - INFO -   Val - Total: 0.8027, Signal: 0.8016, Price: 0.0108
+2025-08-05 00:59:05,292 - INFO -   Metrics - Acc: 0.5585, Prec: 0.4728, Rec: 0.6851, F1: 0.5595
+2025-08-05 00:59:05,292 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:59:26,609 - INFO - Epoch 30/300
+2025-08-05 00:59:26,609 - INFO -   Train - Total: 0.8026, Signal: 0.7997, Price: 0.0292
+2025-08-05 00:59:26,609 - INFO -   Val - Total: 0.7979, Signal: 0.7974, Price: 0.0048
+2025-08-05 00:59:26,609 - INFO -   Metrics - Acc: 0.5561, Prec: 0.4742, Rec: 0.7755, F1: 0.5885
+2025-08-05 00:59:26,609 - INFO -   Learning Rate: 0.001000
+2025-08-05 00:59:47,967 - INFO - Epoch 40/300
+2025-08-05 00:59:47,967 - INFO -   Train - Total: 0.8013, Signal: 0.7988, Price: 0.0248
+2025-08-05 00:59:47,967 - INFO -   Val - Total: 0.7915, Signal: 0.7906, Price: 0.0088
+2025-08-05 00:59:47,967 - INFO -   Metrics - Acc: 0.5644, Prec: 0.4786, Rec: 0.7172, F1: 0.5741
+2025-08-05 00:59:47,967 - INFO -   Learning Rate: 0.000500
+2025-08-05 01:00:09,363 - INFO - Epoch 50/300
+2025-08-05 01:00:09,363 - INFO -   Train - Total: 0.8014, Signal: 0.7989, Price: 0.0247
+2025-08-05 01:00:09,364 - INFO -   Val - Total: 0.7986, Signal: 0.7979, Price: 0.0071
+2025-08-05 01:00:09,364 - INFO -   Metrics - Acc: 0.5513, Prec: 0.4711, Rec: 0.7843, F1: 0.5886
+2025-08-05 01:00:09,364 - INFO -   Learning Rate: 0.000500
+2025-08-05 01:00:30,617 - INFO - Epoch 60/300
+2025-08-05 01:00:30,618 - INFO -   Train - Total: 0.7975, Signal: 0.7951, Price: 0.0245
+2025-08-05 01:00:30,618 - INFO -   Val - Total: 0.7927, Signal: 0.7916, Price: 0.0105
+2025-08-05 01:00:30,618 - INFO -   Metrics - Acc: 0.5561, Prec: 0.4745, Rec: 0.7872, F1: 0.5921
+2025-08-05 01:00:30,618 - INFO -   Learning Rate: 0.000125
+2025-08-05 01:00:34,888 - INFO - Early stopping triggered at epoch 62
+2025-08-05 01:00:34,889 - INFO - ==================================================
+2025-08-05 01:00:34,889 - INFO - Final Evaluation on Test Set
+2025-08-05 01:00:34,889 - INFO - ==================================================
+2025-08-05 01:00:34,999 - INFO - Test Results:
+2025-08-05 01:00:34,999 - INFO -   Loss - Total: 0.7875, Signal: 0.7868, Price: 0.0074
+2025-08-05 01:00:34,999 - INFO -   Signal Classification:
+2025-08-05 01:00:34,999 - INFO -     Accuracy: 0.5668
+2025-08-05 01:00:34,999 - INFO -     Precision: 0.4800
+2025-08-05 01:00:34,999 - INFO -     Recall: 0.7368
+2025-08-05 01:00:34,999 - INFO -     F1-Score: 0.5813
+2025-08-05 01:00:34,999 - INFO -     ROC-AUC: 0.6216
+2025-08-05 01:00:34,999 - INFO -     Specificity: 0.4496
+2025-08-05 01:00:34,999 - INFO -   Price Prediction:
+2025-08-05 01:00:34,999 - INFO -     RMSE: 0.086934
+2025-08-05 01:00:34,999 - INFO -     MAE: 0.064102
+2025-08-05 01:00:35,000 - INFO -   Confusion Matrix:
+2025-08-05 01:00:35,000 - INFO -     TN: 223, FP: 273
+2025-08-05 01:00:35,000 - INFO -     FN: 90, TP: 252
+2025-08-05 01:00:35,000 - INFO - Saving models and artifacts...
+2025-08-05 01:00:35,004 - INFO - ============================================================
+2025-08-05 01:00:35,004 - INFO - Training completed successfully!
+2025-08-05 01:00:35,005 - INFO - Best validation loss: 0.7892
+2025-08-05 01:00:35,005 - INFO - Final test accuracy: 0.5668
+2025-08-05 01:00:35,005 - INFO - Final test F1-score: 0.5813
+2025-08-05 01:00:35,005 - INFO - Models saved in 'models/' directory
+2025-08-05 01:00:35,005 - INFO - ============================================================
